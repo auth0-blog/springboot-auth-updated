@@ -1,12 +1,12 @@
-package com.auth0.samples.authapi.springbootauthupdated;
+package com.sample.springbootauth;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringbootAuthUpdatedApplication {
+public class SpringbootAuthApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringbootAuthUpdatedApplication.class, args);
+		SpringApplication.run(SpringbootAuthApplication.class, args);
 	}
 }

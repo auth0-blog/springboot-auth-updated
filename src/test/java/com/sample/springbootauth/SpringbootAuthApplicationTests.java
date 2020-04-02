@@ -1,4 +1,4 @@
-package com.auth0.samples.authapi.springbootauthupdated;
+package com.sample.springbootauth;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,10 +7,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SpringbootAuthUpdatedApplicationTests {
+public class SpringbootAuthApplicationTests {
 
-	@Test
-	public void contextLoads() {
-	}
+  @Test
+  public void contextLoads() {
+  }
 
 }
