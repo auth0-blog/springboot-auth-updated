@@ -1,14 +1,14 @@
 package com.sample.springbootauth.user;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
+@Document(collection = "users")
 public class ApplicationUser {
+
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @JsonIgnore
   private long id;
   private String username;
   private String password;

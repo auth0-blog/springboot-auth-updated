@@ -25,12 +25,11 @@ repositories {
 
 
 dependencies {
-  compile('org.springframework.boot:spring-boot-starter-data-jpa')
   compile('org.springframework.boot:spring-boot-starter-web')
+  compile('org.springframework.boot:spring-boot-starter-data-mongodb')
 
   compile("org.springframework.boot:spring-boot-starter-security")
   compile("com.auth0:java-jwt:3.9.0") // based on: https://github.com/jwtk/jjwt
 
   testCompile('org.springframework.boot:spring-boot-starter-test')
-  compile("org.hsqldb:hsqldb")
 }

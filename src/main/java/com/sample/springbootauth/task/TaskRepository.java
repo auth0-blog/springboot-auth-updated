@@ -1,6 +1,6 @@
 package com.sample.springbootauth.task;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface TaskRepository extends JpaRepository<Task, Long> {
+public interface TaskRepository extends MongoRepository<Task, Long> {
 }
