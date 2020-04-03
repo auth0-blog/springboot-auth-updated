@@ -8,6 +8,7 @@ you don't have an IDE don't worry you can still follow with a text editor and
 the terminal.
 * Make sure you have Java 11 installed on your system. [Get it here](http://www.oracle.com/technetwork/java/javase/downloads/jdk10-downloads-4416644.html)
 * Clone the repository using the command `https://github.com/edesdan/springboot-auth-jwt.git`
+* Run a mongo db instance on localhost (you can use docker...) 
 * Run `gradle bootrun` to build and run the project or run the project from your ide(make sure you build it before running)
 
 # How it works
