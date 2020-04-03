@@ -21,7 +21,7 @@ public class UserController {
   }
 
   @PostMapping("/registration")
-  public void signUp(@RequestBody ApplicationUser user) {
+  public void registration(@RequestBody ApplicationUser user) {
     user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
     userRepository.save(user);
   }
