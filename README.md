@@ -20,7 +20,7 @@ curl http://localhost:8080/tasks
 curl -H "Content-Type: application/json" -X POST -d '{
     "username": "admin",
     "password": "password"
-}' http://localhost:8080/users/sign-up
+}' http://localhost:8080/users/registration
 
 # logs into the application (JWT is generated)
 curl -i -H "Content-Type: application/json" -X POST -d '{
