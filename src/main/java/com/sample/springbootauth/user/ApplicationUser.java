@@ -1,21 +1,19 @@
 package com.sample.springbootauth.user;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.List;
 
 @Document(collection = "users")
 public class ApplicationUser {
 
-  @Id
-  @JsonIgnore
-  private long id;
+  @Indexed(unique = true)
   private String username;
   private String password;
-
-  public long getId() {
-    return id;
-  }
+  private String uuid;
+  private String type;
+  private List<String> scopes;
 
   public String getUsername() {
     return username;
@@ -31,5 +29,25 @@ public class ApplicationUser {
 
   public void setPassword(String password) {
     this.password = password;
+  }
+
+  public String getUuid() {
+    return uuid;
+  }
+
+  public void setUuid(String uuid) {
+    this.uuid = uuid;
+  }
+
+  public List<String> getScopes() {
+    return scopes;
+  }
+
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
   }
 }
