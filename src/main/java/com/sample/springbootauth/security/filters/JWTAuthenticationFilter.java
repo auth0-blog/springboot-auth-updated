@@ -71,12 +71,20 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                                           Authentication auth) throws IOException, ServletException {
 
     ApplicationUser applicationUser = (ApplicationUser) auth.getPrincipal();
-    logger.info("Authentication succesfully for " + applicationUser);
+    logger.info("Authentication successful for " + applicationUser);
 
-    String token = JWT.create()
-      .withSubject(applicationUser.getUsername())
+    String token = buildJwtToken(applicationUser);
+    logger.info("Authentication token " + token);
+    response.addHeader(HTTP_AUTHORIZATION_HEADER, TOKEN_PREFIX + token);
+  }
+
+  private String buildJwtToken(ApplicationUser applicationUser) {
+    return JWT.create()
+      .withSubject(applicationUser.getUsername()) // TODO check if needed here, probably not
+      .withClaim("uuid", applicationUser.getUuid())
+      .withClaim("type", applicationUser.getType())
+      .withArrayClaim("scopes", applicationUser.getScopes().toArray(new String[0]))
       .withExpiresAt(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
       .sign(HMAC512(SECRET.getBytes()));
-    response.addHeader(HTTP_AUTHORIZATION_HEADER, TOKEN_PREFIX + token);
   }
 }

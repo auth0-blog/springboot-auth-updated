@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.UUID;
+
 @RestController
 @RequestMapping("/users")
 public class UserController {
@@ -23,6 +25,7 @@ public class UserController {
   @PostMapping("/registration")
   public void registration(@RequestBody ApplicationUser user) {
     user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+    user.setUuid(UUID.randomUUID().toString());
     userRepository.save(user);
   }
 }

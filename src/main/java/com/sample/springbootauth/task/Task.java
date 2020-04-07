@@ -1,14 +1,15 @@
 package com.sample.springbootauth.task;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.UUID;
+
 @Document(collection = "tasks")
 public class Task {
+
   @Id
-  @JsonIgnore
-  private long id;
+  private String id = UUID.randomUUID().toString();
   private String description;
 
   protected Task() {
@@ -18,7 +19,7 @@ public class Task {
     this.description = description;
   }
 
-  public long getId() {
+  public String getId() {
     return id;
   }
 
